@@ -1,7 +1,7 @@
 /**
  * Describe class <code>HydrogenAtomTestDrive</code> here.
  *
- * @author <a href="mailto:yczhang@gznc.edu.cn">Yachao Zhang</a>
+ * @author <a href="mailto:yachao.zhang@pku.edu.cn">Yachao Zhang</a>
  * @version November 23, 2023 12:55 PM
  */
 public class HydrogenAtomTestDrive {
