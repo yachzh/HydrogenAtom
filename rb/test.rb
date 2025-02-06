@@ -19,3 +19,28 @@ File.open('wave_function.dat', 'w') do |file|
 end
 puts 'Ground state wave function saved to wave_function.dat'
 
+# plot data using gnuplot
+data = position.each_with_index.map { |pos, index| "#{pos} #{wave[index]}" }.join("\n")
+
+# Open a pipe to Gnuplot
+IO.popen('gnuplot', 'w') do |io|
+  # Send Gnuplot commands
+  io.puts "set terminal png"
+  io.puts "set output 'wave_function.png'"
+  io.puts "set title 'Wave Function'"
+  io.puts "set xlabel 'r (Bohr)'"
+  io.puts "set ylabel 'Wave Function'"
+  
+  # Use the data directly
+  io.puts "plot '-' using 1:2 with linespoints title 'Wave Function'"
+  
+  # Send the data to Gnuplot
+  io.puts data
+  
+  # End the data input
+  io.puts "e"  # 'e' signifies the end of data input
+end
+
+puts 'Wave function plot saved as wave_function.png'
+
+
