@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'java'
 require '../target/HydrogenAtom-1.0-SNAPSHOT-jar-with-dependencies.jar'
 
@@ -25,22 +27,21 @@ data = position.each_with_index.map { |pos, index| "#{pos} #{wave[index]}" }.joi
 # Open a pipe to Gnuplot
 IO.popen('gnuplot', 'w') do |io|
   # Send Gnuplot commands
-  io.puts "set terminal png"
-  io.puts "set output 'wave_function.png'"
+  # io.puts "set terminal png"
+  io.puts 'set terminal postscript eps enhanced color'
+  io.puts "set output 'wave_function.eps'"
   io.puts "set title 'Wave Function'"
   io.puts "set xlabel 'r (Bohr)'"
-  io.puts "set ylabel 'Wave Function'"
-  
+  io.puts "set ylabel '{/Symbol p}'"
+
   # Use the data directly
   io.puts "plot '-' using 1:2 with linespoints title 'Wave Function'"
-  
+
   # Send the data to Gnuplot
   io.puts data
-  
+
   # End the data input
-  io.puts "e"  # 'e' signifies the end of data input
+  io.puts 'e' # 'e' signifies the end of data input
 end
 
-puts 'Wave function plot saved as wave_function.png'
-
-
+puts 'Wave function plot saved as wave_function.eps'
