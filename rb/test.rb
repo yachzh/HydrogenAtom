@@ -32,7 +32,7 @@ IO.popen('gnuplot', 'w') do |io|
   io.puts "set output 'wave_function.eps'"
   io.puts "set title 'Wave Function'"
   io.puts "set xlabel 'r (Bohr)'"
-  io.puts "set ylabel '{/Symbol y}'"
+  io.puts "set ylabel '{/Symbol y}(r)'"
 
   # Use the data directly
   io.puts "plot '-' using 1:2 with linespoints title 'Wave Function'"
