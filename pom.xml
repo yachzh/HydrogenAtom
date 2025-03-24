@@ -24,7 +24,7 @@
     <dependency>
         <groupId>org.jblas</groupId>
         <artifactId>jblas</artifactId>
-        <version>1.2.4</version> <!-- Use the latest version available -->
+        <version>1.2.5</version> <!-- Use the latest version available -->
     </dependency>
     <!-- commons-math3 Dependency -->
     <dependency>

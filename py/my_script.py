@@ -1,12 +1,12 @@
-import os
+# import os
 import jpype
 from pywrite import write_dat
 import matplotlib.pyplot as plt
 
 # Start the JVM
-dep_jarpath = os.environ['HOME'] + \
-    '/.m2/repository/org/jblas/jblas/1.2.4/jblas-1.2.4.jar'
-#jpype.startJVM(
+# dep_jarpath = os.environ['HOME'] + \
+#     '/.m2/repository/org/jblas/jblas/1.2.4/jblas-1.2.4.jar'
+# jpype.startJVM(
 #    classpath=['../target/HydrogenAtom-1.0-SNAPSHOT.jar', dep_jarpath])
 
 jpype.startJVM(
